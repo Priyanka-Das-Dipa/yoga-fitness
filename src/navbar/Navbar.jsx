@@ -39,20 +39,20 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu text-xl font-medium menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="font-bold normal-case text-2xl">Yoga & Fitness</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu text-xl font-medium menu-horizontal px-1">
             {navLinks}
           </ul>
         </div>
         <div className="navbar-end">
-            <Link className="btn" to="/login">Login</Link>
+            <Link className="btn font-bold" to="/login">Login</Link>
         </div>
       </div>
     </div>
