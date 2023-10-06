@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/7zxmg8F/fitness-6.png",
+      "name": "Yoga for Beginners",
+      "short_description": "Join our Yoga for Beginners class to discover the art of relaxation, flexibility, and inner peace. Suitable for all levels, this class focuses on foundational poses and breathing techniques to improve physical and mental well-being.",
+      "price": 25.99
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/16grCvZ/fitness-aa.png",
+      "name": "High-Intensity Interval Training",
+      "short_description": "Experience the ultimate calorie-burning workout with our HIIT class. Get your heart racing and torch fat with intense intervals of cardio and strength exercises. Ideal for those looking to challenge themselves.",
+      "price": 29.99
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/YD6ZMYg/yoga-position-ea.png",
+      "name": "Vinyasa Flow Yoga",
+      "short_description": "Elevate your yoga practice with Vinyasa Flow Yoga. This dynamic class synchronizes breath with movement, helping you build strength, flexibility, and mindfulness. Suitable for intermediate and advanced practitioners.",
+      "price": 27.99
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/J32RZ7V/yoga-position-7f.png",
+      "name": "Pilates for Core Strength",
+      "short_description": "Strengthen your core and improve posture with our Pilates class. Targeting your abdominal muscles and overall body stability, this class will help you achieve a strong and balanced physique.",
+      "price": 24.99
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/Fh7BGvt/yoga-position-d6.png",
+      "name": "Meditation and Mindfulness",
+      "short_description": "Discover the power of meditation & mindfulness. This class offers guidance in calming the mind, reducing stress, and achieving mental clarity. Suitable for anyone seeking peace and tranquility.",
+      "price": 19.99
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/Fs91x3m/car-8.png",
+      "name": "CrossFit Bootcamp",
+      "short_description": "Get ready to break a sweat in our CrossFit Bootcamp. This high-intensity program combines functional movements and strength training to boost your endurance and build muscle.",
+      "price": 34.99
+    }
+  ]
+  
