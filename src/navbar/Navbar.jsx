@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
@@ -12,21 +12,21 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <Link  to="/">
+        <NavLink className="" to="/">
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/details">Details</Link>
+        <NavLink to="/details">Details</NavLink>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <NavLink to="/blogs">Blogs</NavLink>
       </li>
     </>
   );
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="navbar text-white">
+      <div className="navbar text-white bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,7 +47,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="text-black menu text-xl font-medium menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="text-black menu text-xl font-medium menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
             >
               {navLinks}
             </ul>
@@ -57,7 +57,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu text-xl font-medium menu-horizontal px-1">
+          <ul className="menu text-xl  font-medium menu-horizontal px-1">
             {navLinks}
           </ul>
         </div>

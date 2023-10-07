@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Yoga for Inner Peace",
+    "image": "https://i.ibb.co/LCvS53F/gabe-pierce-zb-F-l-W3k1-QU-unsplash.jpg",
+    "description": "Discover the benefits of yoga and how it can improve your flexibility, strength, and mental well-being. Join us on a journey to achieve inner peace and physical harmony through our yoga classes and expert guidance.",
+    "date": "2023-10-07",
+    "time": "10:00 AM"
+  },
+  {
+    "id": 2,
+    "title": "Total Body Fitness Workshop",
+    "image": "https://i.ibb.co/JRJptYn/geert-pieters-3-Rnk-Zp-Dqs-EI-unsplash.jpg",
+    "description": "Get ready for a total body workout! Our fitness experts will show you the latest workout routines, nutrition tips, and motivational strategies to help you achieve your fitness goals. Don't miss out on our upcoming fitness workshop!",
+    "date": "2023-10-10",
+    "time": "2:30 PM"
+  },
+  {
+    "id": 3,
+    "title": "Morning Yoga Bliss",
+    "image": "https://i.ibb.co/8bbPWqj/group-young-yogi-people-sitting-sukhasana-exercise.jpg",
+    "description": "Start your day with a refreshing yoga session. Learn various yoga poses and meditation techniques to boost your energy and reduce stress. Join our early morning yoga class every weekday!",
+    "date": "2023-10-12",
+    "time": "6:00 AM"
+  },
+  {
+    "id": 4,
+    "title": "Strength Training & Muscle",
+    "image": "https://i.ibb.co/mSnB3MV/istockphoto-1404635742-1024x1024.jpg",
+    "description": "Explore the world of strength training and muscle building with our fitness trainers. Whether you're a beginner or an experienced lifter, our gym has the equipment and guidance you need to succeed.",
+    "date": "2023-10-15",
+    "time": "4:00 PM"
+  },
+  {
+    "id": 5,
+    "title": "Mindfulness Meditation ",
+    "image": "https://i.ibb.co/jbjM37z/karma-Yoga.jpg",
+    "description": "Unlock the secrets of mindfulness and meditation. Our experienced yoga instructors will teach you how to find inner peace and balance through guided meditation sessions.",
+    "date": "2023-10-18",
+    "time": "7:00 PM"
+  },
+  {
+    "id": 6,
+    "title": "Weekly Fitness Challenges",
+    "image": "https://i.ibb.co/mDC28dG/kike-vega-F2qh3yjz6-Jk-unsplash.jpg",
+    "description": "Stay fit and healthy with our weekly fitness challenges. We organize outdoor activities, such as group runs and obstacle courses, to keep you motivated and active. Join us this weekend!",
+    "date": "2023-10-21",
+    "time": "9:00 AM"
+  },
+  {
+    "id": 7,
+    "title": "Yoga Philosophy Workshop",
+    "image": "https://i.ibb.co/x8VCYNP/young-beautiful-woman-doing-yoga-nature.jpg",
+    "description": "Yoga is not just a physical practice; it's a way of life. Dive deep into the philosophy of yoga and learn how it can transform your mind, body, and soul. Join our yoga philosophy workshop!",
+    "date": "2023-10-24",
+    "time": "3:00 PM"
+  },
+  {
+    "id": 8,
+    "title": "Nutrition Seminar for Fitness",
+    "image": "https://i.ibb.co/dphF2vC/Varki-Yoga.jpg",
+    "description": "Nutrition is key to achieving your fitness goals. Attend our nutrition seminar to learn about the importance of a balanced diet and how to make healthier food choices.",
+    "date": "2023-10-27",
+    "time": "11:30 AM"
+  },
+  {
+    "id": 9,
+    "title": "Yoga Retreat in Nature",
+    "image": "https://i.ibb.co/ZfQXF1R/gordon-cowie-ISg1-Jh-N-v-Fk-unsplash.jpg",
+    "description": "Join our yoga retreat in a serene natural setting. Experience the healing power of nature combined with yoga and meditation. Reconnect with yourself and find inner tranquility.",
+    "date": "2023-10-30",
+    "time": "8:00 AM"
+  },
+  {
+    "id": 10,
+    "title": "Latest Fitness Technology ",
+    "image": "https://i.ibb.co/Jrxkwvr/thisisengineering-raeng-u-HGOSQ7-DIOE-unsplash.jpg",
+    "description": "Discover the latest trends in fitness technology. Our experts will review the newest fitness gadgets and apps to help you track your progress and stay motivated on your fitness journey.",
+    "date": "2023-11-02",
+    "time": "5:30 PM"
+  }
+]
