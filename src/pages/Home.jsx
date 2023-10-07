@@ -44,8 +44,8 @@ const Home = () => {
           <ServicesCard services={aService}></ServicesCard>
         ))}
       </div>
-      <div className="mt-10">
-      <About></About>
+      <div className="mt-10 mb-5 h-[90vh]">
+      <About id="about"></About>
       </div>
       <div className="mt-10">
       <FAQ></FAQ>

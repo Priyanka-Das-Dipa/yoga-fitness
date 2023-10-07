@@ -5,7 +5,7 @@ const Details = () => {
     return (
         <div>
             <Navbar></Navbar>
-            detsils
+            
         </div>
     );
 };

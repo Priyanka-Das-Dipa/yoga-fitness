@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { CiDumbbell} from "react-icons/ci";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -52,8 +53,8 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="font-bold normal-case text-xl md:text-2xl">
-            Yoga & Fitness
+          <a className="font-bold normal-case text-xl md:text-2xl flex gap-2">
+           <CiDumbbell className="text-orange-400"></CiDumbbell> Yoga & Fitness
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -63,13 +64,13 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button onClick={handleLogout} className="btn">Logout</button>
+            <button onClick={handleLogout} className="select-none rounded-lg bg-orange-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white shadow-md shadow-orange-500/40 transition-all hover:shadow-lg hover:shadow-orange-800 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none uppercase">Logout</button>
           ) : (
             <Link
               className="select-none rounded-lg bg-orange-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white shadow-md shadow-orange-500/40 transition-all hover:shadow-lg hover:shadow-orange-800 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none uppercase"
-              to="/login"
+              to="/register"
             >
-              Login
+              SignUp
             </Link>
           )}
         </div>

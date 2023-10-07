@@ -1,13 +1,19 @@
-import React, { useContext } from "react";
-import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import Navbar from "../navbar/Navbar";
 import { AuthContext } from "../provider/AuthProvider";
+import swal from "sweetalert";
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext)
-  const location = useLocation()
-  const navigate = useNavigate()
+  const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [showToast, setSowToast] = useState(false);
   const bg = {
     backgroundImage:
       'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/47ZcqHh/bg-2.jpg")',
@@ -16,23 +22,23 @@ const Login = () => {
     backgroundPosition: "center center",
     position: "relative",
   };
-  
+
   const handleLogin = (e) => {
-    e.preventDefault()
-    const form = new FormData(e.currentTarget)
-    const email = form.get('email')
-    const password = form.get('password')
-    console.log(email, password)
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
 
     signIn(email, password)
-    .then((result) => {
-      console.log(result.user)
-      navigate(location?.state ? location.state : "/")
-    })
-    .catch( (error) => {
-      console.error(error)
-    })
-    
+      .then((result) => {
+        console.log(result.user);
+        setSowToast(true);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <div className="h-screen" style={bg}>
@@ -98,6 +104,9 @@ const Login = () => {
           </button>
         </div>
       </div>
+      {showToast && (
+        swal("Successfully!", "Logged in!", "success")
+      )}
     </div>
   );
 };

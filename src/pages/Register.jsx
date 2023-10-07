@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import { AuthContext } from "../provider/AuthProvider";
+import swal from "sweetalert";
 
 const Register = () => {
   const bg = {
@@ -13,23 +14,28 @@ const Register = () => {
     backgroundPosition: "center center",
     position: "relative",
   };
-  const {createUser} = useContext(AuthContext)
+  const [showToast, setSowToast] = useState(false);
+  const navigate = useNavigate()
+  const { createUser } = useContext(AuthContext);
   const handleRegister = (e) => {
-    e.preventDefault()
-    const form = new FormData(e.currentTarget)
-    const firstName = form.get('firstName')
-    const lastName = form.get('lastName')
-    const email = form.get('email')
-    const password = form.get('password')
-    console.log(email, password)
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const firstName = form.get("firstName");
+    const lastName = form.get("lastName");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
 
     createUser(email, password)
-    .then( result => {
-      console.log(result.user)
-    })
-    .catch(error => {
-      console.error(error);
-    })
+      .then((result) => {
+        console.log(result.user);
+        setSowToast(true);
+        swal("Successfully!", "Logged in!", "success")
+        navigate("/login")
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <div className="h-screen" style={bg}>
@@ -120,6 +126,8 @@ const Register = () => {
           </button>
         </div>
       </div>
+
+      {showToast && swal("Successfully!", "Your Registration is Done!", "success")}
     </div>
   );
 };
