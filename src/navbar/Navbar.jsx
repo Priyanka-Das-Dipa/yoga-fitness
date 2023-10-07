@@ -12,15 +12,15 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink className="" to="/">
+        <NavLink  className="underline text-orange-300" to="/">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/details">Details</NavLink>
+        <NavLink className="underline text-orange-300" to="/details">Details</NavLink>
       </li>
       <li>
-        <NavLink to="/blogs">Blogs</NavLink>
+        <NavLink className="underline text-orange-300" to="/blogs">Blogs</NavLink>
       </li>
     </>
   );

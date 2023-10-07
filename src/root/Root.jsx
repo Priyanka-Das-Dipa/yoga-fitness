@@ -6,7 +6,6 @@ import Footer from '../pages/Footer';
 const Root = () => {
     return (
         <div className='font-josefinSans'>
-            
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

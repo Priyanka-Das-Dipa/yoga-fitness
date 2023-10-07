@@ -2,7 +2,7 @@ import React from "react";
 
 
 const BlogCard = ({ blogs }) => {
-    
+  
   const { title, image, description, date, time } = blogs;
   return (
     <div className="mt-3 ml-2">
@@ -12,7 +12,8 @@ const BlogCard = ({ blogs }) => {
         </div>
         <div className="p-6">
           <h6 className="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-orange-400 antialiased">
-            Yoga & Fitness
+          <span className="badge lowercase text-orange-300 px-4 py-3 mr-5">Fitness</span>
+          <span className="badge lowercase text-orange-300 px-4 py-3">Yoga Pratice</span>
           </h6>
           <h4 className="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
             {title}
@@ -30,6 +31,7 @@ const BlogCard = ({ blogs }) => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };
