@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () =>{
+    logOut()
+    .then()
+    .catch()
+  }
   const navLinks = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link  to="/">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to='/details'>Details</Link>
+        <Link to="/details">Details</Link>
       </li>
       <li>
-        <Link to='/blogs'>Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
-      
     </>
   );
   return (
@@ -39,12 +47,14 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu text-xl font-medium menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="text-black menu text-xl font-medium menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
             </ul>
           </div>
-          <a className="font-bold normal-case text-2xl">Yoga & Fitness</a>
+          <a className="font-bold normal-case text-xl md:text-2xl">
+            Yoga & Fitness
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu text-xl font-medium menu-horizontal px-1">
@@ -52,7 +62,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-            <Link className="btn font-bold" to="/login">Login</Link>
+          {user ? (
+            <button onClick={handleLogout} className="btn">Logout</button>
+          ) : (
+            <Link
+              className="select-none rounded-lg bg-orange-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white shadow-md shadow-orange-500/40 transition-all hover:shadow-lg hover:shadow-orange-800 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none uppercase"
+              to="/login"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

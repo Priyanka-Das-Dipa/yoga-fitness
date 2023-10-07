@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const ServicesCard = ({services}) => {
 
-    const {name, image, short_description, price} = services;
+    const {name, image, short_description, price, id} = services;
 
     return (
         <div className='max-w-7xl mx-auto'>
             
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
                 {
-                    <div class="relative flex w-96 flex-col rounded-3xl bg-[#525150] text-orange-200 bg-clip-border shadow-lg shadow-[#424241]">
+                    <div class="relative flex w-96  flex-col rounded-3xl bg-[#525150] text-orange-200 bg-clip-border shadow-lg shadow-[#424241]">
                     <div class="relative mx-4 -mt-6 h-56 overflow-hidden  bg-blue-gray-500 bg-clip-border text-white  ">
                       <img
                         src={image}
@@ -29,13 +30,13 @@ const ServicesCard = ({services}) => {
 
                     </div>
                     <div class="p-6 pt-0">
-                      <button
+                      <Link to={`/services/${id}`}
                         class="select-none rounded-lg bg-orange-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white shadow-md shadow-orange-500/40 transition-all hover:shadow-lg hover:shadow-orange-800 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button"
                         data-ripple-light="true"
                       >
                         Details
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 }

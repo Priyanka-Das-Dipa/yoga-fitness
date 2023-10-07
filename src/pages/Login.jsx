@@ -1,9 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import Navbar from "../navbar/Navbar";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+  const {signIn} = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
   const bg = {
     backgroundImage:
       'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/47ZcqHh/bg-2.jpg")',
@@ -12,16 +16,34 @@ const Login = () => {
     backgroundPosition: "center center",
     position: "relative",
   };
+  
+  const handleLogin = (e) => {
+    e.preventDefault()
+    const form = new FormData(e.currentTarget)
+    const email = form.get('email')
+    const password = form.get('password')
+    console.log(email, password)
+
+    signIn(email, password)
+    .then((result) => {
+      console.log(result.user)
+      navigate(location?.state ? location.state : "/")
+    })
+    .catch( (error) => {
+      console.error(error)
+    })
+    
+  };
   return (
     <div className="h-screen" style={bg}>
       <Navbar></Navbar>
       <div className="flex justify-center items-center mt-16 text-white">
-        <div className="border px-14 py-5  rounded-md">
-          <form>
+        <div className="border px-5 md:px-14 py-5  rounded-md">
+          <form onSubmit={handleLogin}>
             <h2 className="text-2xl font-bold">Login</h2>
             <div className="space-y-3">
               <div className="flex w-72 flex-col gap-6 mt-5">
-                <div className="relative h-11 w-full min-w-[350px]">
+                <div className="relative h-11 w-full md:min-w-[350px]">
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
@@ -35,7 +57,7 @@ const Login = () => {
               </div>
 
               <div className="flex w-72 flex-col gap-6">
-                <div className="relative h-11 w-full min-w-[350px]">
+                <div className="relative h-11 w-full md:min-w-[350px]">
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
@@ -51,7 +73,9 @@ const Login = () => {
                 <input type="checkbox" name="" id="" />
                 <span>Remember me</span>
               </div>
-              <button className="btn btn-warning min-w-[350px] mt-5">Login</button>
+              <button className="btn btn-warning min-w-[350px] mt-5">
+                Login
+              </button>
             </div>
             <p className="mt-5">
               Don't have an Account?{" "}

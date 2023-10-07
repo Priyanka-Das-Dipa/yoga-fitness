@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
   const bg = {
@@ -12,16 +13,34 @@ const Register = () => {
     backgroundPosition: "center center",
     position: "relative",
   };
+  const {createUser} = useContext(AuthContext)
+  const handleRegister = (e) => {
+    e.preventDefault()
+    const form = new FormData(e.currentTarget)
+    const firstName = form.get('firstName')
+    const lastName = form.get('lastName')
+    const email = form.get('email')
+    const password = form.get('password')
+    console.log(email, password)
+
+    createUser(email, password)
+    .then( result => {
+      console.log(result.user)
+    })
+    .catch(error => {
+      console.error(error);
+    })
+  };
   return (
     <div className="h-screen" style={bg}>
       <Navbar></Navbar>
       <div className="flex justify-center items-center mt-10 text-white">
-        <div className="border px-20  py-5 rounded-md">
-          <form>
+        <div className="border px-12 md:px-32  py-5 rounded-md">
+          <form onSubmit={handleRegister}>
             <h2 className="text-2xl font-bold">Register</h2>
             <div className="space-y-2">
               <div class="flex w-72 flex-col gap-6 mt-5">
-                <div class="relative h-11 w-full min-w-[350px]">
+                <div class="relative h-11 w-full md:min-w-[350px]">
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
@@ -34,7 +53,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="flex w-72 flex-col gap-6 mt-5">
-                <div className="relative h-11 w-full min-w-[350px]">
+                <div className="relative h-11 w-full md:min-w-[350px]">
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
@@ -47,7 +66,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="flex w-72 flex-col gap-6 mt-5">
-                <div className="relative h-11 w-full min-w-[350px]">
+                <div className="relative h-11 w-full md:min-w-[350px]">
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
@@ -61,7 +80,7 @@ const Register = () => {
               </div>
 
               <div className="flex w-72 flex-col gap-6">
-                <div className="relative h-11 w-full min-w-[350px]">
+                <div className="relative h-11 w-full md:min-w-[350px]">
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
@@ -89,7 +108,7 @@ const Register = () => {
           </form>
         </div>
       </div>
-      <div className="text-center flex justify-center items-center mt-5">
+      <div className="text-center flex justify-center items-center mt-3">
         <div className="space-y-3 text-white">
           <button className="py-2 px-9 border rounded-xl flex items-center justify-between  text-xl gap-6">
             <FaFacebook className="text-2xl text-blue-400"></FaFacebook>{" "}

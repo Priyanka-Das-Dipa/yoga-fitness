@@ -22,10 +22,10 @@ const Home = () => {
           {/* Banner Section */}
           <div className="max-w-7xl mx-auto mt-10 text-white">
             <div className="text-left flex justify-normal items-left pt-16">
-              <h2 className="text-9xl font-semibold">
+              <h2 className="text-6xl lg:text-9xl font-semibold">
                 Mindfulness <br />
                 <p className="text-7xl font-medium">Yoga & Fitness</p>
-                <p className="text-3xl text-orange-200 pt-5">
+                <p className="text-lg lg:text-3xl text-orange-200 pt-5">
                   Yoga & Fitness is a practice that connects the body, breath,
                   and mind. It uses physical postures, breathing exercises, and
                   meditation to improve overall health. Yoga was developed as a

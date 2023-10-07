@@ -4,27 +4,33 @@ import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Details from "../pages/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
         path: "/",
-        element: <Root></Root>,
-        errorElement: <ErrorPage></ErrorPage>,
-        children:[
-            {
-                path: "/",
-                element: <Home></Home>,
-                loader: () => fetch('/data.json')
-            },{
-                path: "/login",
-                element: <Login></Login>
-            },
-            {
-                path: "/register",
-                element: <Register></Register>
-            }
-        ]
-
-    }
-])
+        element: <Home></Home>,
+        loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/services/:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
 export default router;
