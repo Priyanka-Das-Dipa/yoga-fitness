@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import { AuthContext } from "../provider/AuthProvider";
@@ -15,9 +15,12 @@ const Register = () => {
     position: "relative",
   };
   const [showToast, setSowToast] = useState(false);
+  const [registerError, setRegisterError] = useState("");
+  const [showPass, setShowPass] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { createUser, googleSignIn } = useContext(AuthContext);
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -26,6 +29,19 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password);
+
+    if (password.length < 6) {
+      setRegisterError("password should more the 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError("Your password have at least one UPPERCASE.");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setRegisterError("Your password have at least one LOWERCASE.");
+      return;
+    }
+
+    setRegisterError(" ");
 
     createUser(email, password)
       .then((result) => {
@@ -37,6 +53,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.error(error);
+        setRegisterError(error.message);
       });
   };
 
@@ -45,7 +62,7 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setSowToast(true);
-        swal("Successfully!", "Logged in!", "success");
+        swal("Successfully!", "Your Registration is done!", "success");
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => console.error(error));
@@ -103,9 +120,12 @@ const Register = () => {
                   <input
                     className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-black focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                     placeholder=" "
-                    type="password"
+                    type={showPass ? "text" : "password"}
                     name="password"
                   />
+                  <span className="absolute mt-5 mr-[20px]" onClick={() => setShowPass(!showPass)}>
+                    {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                  </span>
                   <label className="after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-black after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:border-black peer-focus:after:scale-x-100 peer-focus:after:border-black peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                     Password
                   </label>
@@ -125,14 +145,11 @@ const Register = () => {
               </Link>
             </p>
           </form>
+          {registerError && <p className="text-red-500">{registerError}</p>}
         </div>
       </div>
       <div className="text-center flex justify-center items-center mt-3">
         <div className="space-y-3 text-white">
-          <button className="py-2 px-9 border rounded-xl flex items-center justify-between  text-xl gap-6">
-            <FaFacebook className="text-2xl text-blue-400"></FaFacebook>{" "}
-            Continue with Facebook
-          </button>
           <button
             onClick={handleGoogleSignUp}
             className="py-2 px-9 border rounded-xl flex items-center justify-between  text-xl gap-6"

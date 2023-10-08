@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../navbar/Navbar';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Details = () => {
   const [service, setService] = useState({})
@@ -25,6 +26,7 @@ const Details = () => {
       
     return (
         <div style={bg}>
+          
             <Navbar></Navbar>
             <div className='max-w-7xl mx-auto mt-16 '>
               {

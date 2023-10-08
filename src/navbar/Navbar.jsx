@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { CiDumbbell } from "react-icons/ci";
+import { Helmet } from "react-helmet-async";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -32,8 +33,10 @@ const Navbar = () => {
       </li>
     </>
   );
+ 
   return (
     <div className="max-w-7xl mx-auto">
+      
       <div className="navbar text-white bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
