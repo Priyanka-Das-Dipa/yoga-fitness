@@ -16,13 +16,18 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="underline text-orange-300" to="/details">
+      <NavLink className="underline text-orange-300" to="/services/`${id}`">
           Details
         </NavLink>
       </li>
       <li>
         <NavLink className="underline text-orange-300" to="/blogs">
           Blogs
+        </NavLink>
+      </li>
+      <li>
+      <NavLink className="underline text-orange-300" to="/classes">
+          Classes
         </NavLink>
       </li>
     </>

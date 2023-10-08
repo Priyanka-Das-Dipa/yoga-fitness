@@ -14,8 +14,6 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [showToast, setSowToast] = useState(false);
-  const [userProfile, setUserProfile] = useState("");
-  const [userName, setUserName] = useState("")
   const bg = {
     backgroundImage:
       'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/47ZcqHh/bg-2.jpg")',
