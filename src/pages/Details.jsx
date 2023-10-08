@@ -28,7 +28,8 @@ const Details = () => {
             <Navbar></Navbar>
             <div className='max-w-7xl mx-auto mt-16 '>
               {
-                <div className="card card-side bg-base-100 shadow-xl">
+                <div className=''>
+                  <div className="card card-side h-[50vh] bg-base-100 shadow-xl">
                 <figure><img src={service.image} alt="Movie"/></figure>
                 <div className="card-body">
                   <h2 className="card-title text-2xl font-bold text-orange-400">{service.name}</h2>
@@ -40,6 +41,8 @@ const Details = () => {
                   
                 </div>
               </div>
+              
+                </div>
               }
             </div>
             

@@ -16,6 +16,7 @@ const Blog = () => {
   return (
    <div style={bg} className="">
     <Navbar></Navbar>
+    <h2 className="font-bold text-3xl uppercase text-center text-white py-10">Different workout Blogs</h2>
      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-7xl mx-auto ">
       {blogs.map((blog) => (
         <BlogCard blogs={blog}></BlogCard>

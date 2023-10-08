@@ -5,7 +5,7 @@ import Footer from '../pages/Footer';
 
 const Root = () => {
     return (
-        <div className='font-josefinSans'>
+        <div className='font-josefinSans space-y-4'>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
