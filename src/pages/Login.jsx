@@ -10,10 +10,12 @@ import { AuthContext } from "../provider/AuthProvider";
 import swal from "sweetalert";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [showToast, setSowToast] = useState(false);
+  const [userProfile, setUserProfile] = useState("");
+  const [userName, setUserName] = useState("")
   const bg = {
     backgroundImage:
       'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/47ZcqHh/bg-2.jpg")',
@@ -35,11 +37,26 @@ const Login = () => {
         console.log(result.user);
         setSowToast(true);
         navigate(location?.state ? location.state : "/");
+        e.target.reset()
       })
       .catch((error) => {
         console.error(error);
       });
+        
   };
+
+  const handleGoogleSignIn = () =>{
+    googleSignIn()
+    .then(result => {
+      console.log(result.user)
+      setUserName(result.user.displayName)
+      setUserProfile(result.user.photoURL)
+      navigate(location?.state ? location.state : "/");
+      setSowToast(true);
+
+    })
+    .catch(error => {console.error(error)})
+  }
   return (
     <div className="h-screen" style={bg}>
       <Navbar></Navbar>
@@ -98,9 +115,9 @@ const Login = () => {
             <FaFacebook className="text-2xl text-blue-400"></FaFacebook>{" "}
             Continue with Facebook
           </button>
-          <button className="py-2 px-9 border rounded-xl flex items-center justify-between text-white text-xl gap-6">
+          <button onClick={handleGoogleSignIn} className="py-2 px-9 border rounded-xl flex items-center justify-between text-white text-xl gap-6">
             <FaGoogle className="text-2xl text-green-300"></FaGoogle> Continue
-            with Facebook
+            with Google
           </button>
         </div>
       </div>

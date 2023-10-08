@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import { AuthContext } from "../provider/AuthProvider";
 import swal from "sweetalert";
@@ -15,8 +15,9 @@ const Register = () => {
     position: "relative",
   };
   const [showToast, setSowToast] = useState(false);
-  const navigate = useNavigate()
-  const { createUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { createUser, googleSignIn } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -30,12 +31,24 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setSowToast(true);
-        swal("Successfully!", "Logged in!", "success")
-        navigate("/login")
+        swal("Successfully!", "Logged in!", "success");
+        navigate("/login");
+        e.target.reset();
       })
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  const handleGoogleSignUp = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+        setSowToast(true);
+        swal("Successfully!", "Logged in!", "success");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => console.error(error));
   };
   return (
     <div className="h-screen" style={bg}>
@@ -120,14 +133,18 @@ const Register = () => {
             <FaFacebook className="text-2xl text-blue-400"></FaFacebook>{" "}
             Continue with Facebook
           </button>
-          <button className="py-2 px-9 border rounded-xl flex items-center justify-between  text-xl gap-6">
+          <button
+            onClick={handleGoogleSignUp}
+            className="py-2 px-9 border rounded-xl flex items-center justify-between  text-xl gap-6"
+          >
             <FaGoogle className="text-2xl text-green-300"></FaGoogle> Continue
-            with Facebook
+            with Google
           </button>
         </div>
       </div>
 
-      {showToast && swal("Successfully!", "Your Registration is Done!", "success")}
+      {showToast &&
+        swal("Successfully!", "Your Registration is Done!", "success")}
     </div>
   );
 };
