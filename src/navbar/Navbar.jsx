@@ -16,7 +16,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-      <NavLink className="underline text-orange-300" to="/services/`${id}`">
+      <NavLink className="underline text-orange-300" to="/details">
           Details
         </NavLink>
       </li>
