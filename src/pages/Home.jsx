@@ -23,7 +23,12 @@ const Home = () => {
           <Navbar></Navbar>
           {/* Banner Section */}
           <div className="max-w-7xl mx-auto mt-5 text-white">
-            <div className="text-left flex justify-normal items-left pt-16">
+            <div
+              data-aos="fade-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+              className="text-left flex justify-normal items-left pt-16"
+            >
               <h2 className="text-6xl lg:text-9xl font-semibold">
                 Mindfulness <br />
                 <p className="text-7xl font-medium">Yoga & Fitness</p>
@@ -38,17 +43,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <h1 className="text-5xl font-semibold text-center py-10 text-orange-400">Our Services</h1>
+      <h1 className="text-5xl font-semibold text-center py-10 text-orange-400">
+        Our Services
+      </h1>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((aService) => (
           <ServicesCard services={aService}></ServicesCard>
         ))}
       </div>
       <div className="mt-10 mb-5 h-[90vh]">
-      <About id="about"></About>
+        <About id="about"></About>
       </div>
       <div className="mt-10">
-      <FAQ></FAQ>
+        <FAQ></FAQ>
       </div>
     </div>
   );
