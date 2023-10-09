@@ -15,10 +15,12 @@ const Classes = () => {
   return (
     <div style={bg}>
       <Navbar></Navbar>
-      <div className="grid grid-cols-3 gap-5 max-w-7xl mx-auto mt-10">
+      <h2 className="font-bold text-3xl uppercase text-center text-white py-10">Our Classes Schedule</h2>
+
+      <div className="grid justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto mt-10">
         {classes.map((classItem) => (
           <div data-aos="zoom-in-up"
-          data-aos-duration="3000" className="card w-96 bg-base-100 shadow-xl">
+          data-aos-duration="3000" className="card  bg-base-100 shadow-xl">
             <figure>
               <img src={classItem.image_url} alt="Shoes" />
             </figure>

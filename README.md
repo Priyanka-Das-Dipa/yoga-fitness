@@ -1,8 +1,8 @@
-# React + Vite
+# Features of `Yoga & Fitness` event-management project
++ there is login and registration page.
++ Firebase authentication with Google.
++ Landing page have banner, about, faq and footer
++ Service section has our services with image, description, and a button.
++ Click the specific button in service card will go the private route.
++ there is also two private route that is blog and classes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

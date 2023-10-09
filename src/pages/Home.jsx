@@ -50,12 +50,15 @@ const Home = () => {
           <ServicesCard services={aService}></ServicesCard>
         ))}
       </div>
-      <div className="mt-10 mb-5 h-[90vh]">
+     <div className="overflow-hidden">
+     <div className="mt-10 mb-5 h-[90vh]">
         <About id="about"></About>
       </div>
-      <div className="mt-10">
+      <div className="mt-5">
         <FAQ></FAQ>
       </div>
+      
+     </div>
     </div>
   );
 };

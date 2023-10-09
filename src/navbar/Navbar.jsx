@@ -28,7 +28,7 @@ const Navbar = () => {
       </li>
     </>
   );
- 
+//  this is return
   return (
     <div className="max-w-7xl mx-auto">
       
@@ -58,7 +58,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="font-bold normal-case text-xl md:text-2xl flex gap-2">
+          <a className="hidden font-bold normal-case text-xl md:text-2xl md:flex gap-2">
             <CiDumbbell className="text-orange-400"></CiDumbbell> Yoga & Fitness
           </a>
         </div>
@@ -70,7 +70,7 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div className="flex items-center space-x-2">
+              <div className="hidden md:flex items-center space-x-2">
                 {user.photoURL && (
                   <img
                     src={user.photoURL}

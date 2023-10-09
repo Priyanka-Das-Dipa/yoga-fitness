@@ -2,17 +2,17 @@ import React from "react";
 
 const FAQ = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl  mx-auto ">
       <h1 className="text-5xl font-semibold text-center py-8 text-orange-400">
         FAQ's
       </h1>
-      <div className="grid md:grid-cols-2 gap-2 justify-center items-center">
-        <div data-aos="zoom-in-right" data-aos-duration="2000">
-          <img src="https://i.ibb.co/fChzdwf/Feb-Business-9.jpg" alt="" />
+      <div className="lg:grid lg:grid-cols-2 flex flex-col-reverse gap-2 justify-center items-center">
+        <div  data-aos="zoom-in-right" data-aos-duration="2000">
+          <img className="" src="https://i.ibb.co/fChzdwf/Feb-Business-9.jpg" alt="" />
         </div>
 
         <div data-aos="zoom-in-left" data-aos-duration="2000">
-          <div className="collapse collapse-arrow bg-slate-50 mb-2">
+          <div className="collapse collapse-arrow bg-slate-50 mb-2 ">
             <input type="radio" name="my-accordion-2" checked="checked" />
             <div className="collapse-title text-2xl font-semibold ">
               What are the benefits of doing yoga?
