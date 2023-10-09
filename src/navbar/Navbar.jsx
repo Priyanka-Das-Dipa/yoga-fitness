@@ -16,11 +16,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-      <NavLink className="underline text-orange-300" to="/details">
-          Details
-        </NavLink>
-      </li>
+     
       <li>
         <NavLink className="underline text-orange-300" to="/blogs">
           Blogs

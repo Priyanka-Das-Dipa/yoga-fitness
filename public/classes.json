@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "exercise_name": "Yoga Flow",
+        "date": "2023-10-10",
+        "time": "08:00 AM",
+        "day": "Monday",
+        "image_url": "https://i.ibb.co/dphF2vC/Varki-Yoga.jpg"
+    },
+    {
+        "id": "2",
+        "exercise_name": "Cardio Kickboxing",
+        "date": "2023-10-11",
+        "time": "06:30 PM",
+        "day": "Tuesday",
+        "image_url": "https://i.ibb.co/JRJptYn/geert-pieters-3-Rnk-Zp-Dqs-EI-unsplash.jpg"
+    },
+    {
+        "id": "3",
+        "exercise_name": "Strength Training",
+        "date": "2023-10-12",
+        "time": "09:15 AM",
+        "day": "Wednesday",
+        "image_url": "https://i.ibb.co/8bbPWqj/group-young-yogi-people-sitting-sukhasana-exercise.jpg"
+    },
+    {
+        "id": "4",
+        "exercise_name": "Pilates",
+        "date": "2023-10-13",
+        "time": "07:45 AM",
+        "day": "Thursday",
+        "image_url": "https://i.ibb.co/mSnB3MV/istockphoto-1404635742-1024x1024.jpg"
+    },
+    {
+        "id": "5",
+        "exercise_name": "Zumba",
+        "date": "2023-10-14",
+        "time": "06:00 PM",
+        "day": "Friday",
+        "image_url": "https://i.ibb.co/jbjM37z/karma-Yoga.jpg"
+    },
+    {
+        "id": "6",
+        "exercise_name": "Meditation",
+        "date": "2023-10-15",
+        "time": "07:30 AM",
+        "day": "Saturday",
+        "image_url": "https://i.ibb.co/mDC28dG/kike-vega-F2qh3yjz6-Jk-unsplash.jpg"
+    }
+]

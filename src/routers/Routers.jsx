@@ -40,7 +40,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/classes",
-        element: <PrivateRoute><Classes></Classes></PrivateRoute>
+        element: <PrivateRoute><Classes></Classes></PrivateRoute>,
+        loader: () => fetch('/classes.json')
       }
     ],
   },
