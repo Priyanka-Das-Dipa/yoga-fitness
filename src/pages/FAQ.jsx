@@ -7,11 +7,11 @@ const FAQ = () => {
         FAQ's
       </h1>
       <div className="grid md:grid-cols-2 gap-2 justify-center items-center">
-        <div>
+        <div data-aos="zoom-in-right" data-aos-duration="2000">
           <img src="https://i.ibb.co/fChzdwf/Feb-Business-9.jpg" alt="" />
         </div>
 
-        <div>
+        <div data-aos="zoom-in-left" data-aos-duration="2000">
           <div className="collapse collapse-arrow bg-slate-50 mb-2">
             <input type="radio" name="my-accordion-2" checked="checked" />
             <div className="collapse-title text-2xl font-semibold ">

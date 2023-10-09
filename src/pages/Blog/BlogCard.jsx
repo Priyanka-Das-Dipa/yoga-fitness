@@ -5,7 +5,8 @@ const BlogCard = ({ blogs }) => {
   
   const { title, image, description, date, time } = blogs;
   return (
-    <div className="mt-3 ml-2">
+    <div data-aos="zoom-in-up"
+    data-aos-duration="3000" className="mt-3 ml-2">
       <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
         <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
           <img src={image} alt="image" className="h-full w-full object-cover" />

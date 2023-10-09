@@ -1,9 +1,5 @@
 import React, { useContext, useState } from "react";
-import {
-  Link,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from "react-icons/fa";
 import Navbar from "../navbar/Navbar";
 import { AuthContext } from "../provider/AuthProvider";
@@ -14,7 +10,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [showToast, setSowToast] = useState(false);
-  const [loginError, setLoginError] = useState('')
+  const [loginError, setLoginError] = useState("");
   const [showPass, setShowPass] = useState(false);
   const bg = {
     backgroundImage:
@@ -32,50 +28,53 @@ const Login = () => {
     const password = form.get("password");
     console.log(email, password);
 
-    if(password.length < 6){
-      setLoginError("password should more the 6 characters")
-      return
-    }else if(!/[A-Z]/.test(password)){
-      setLoginError('Your password have at least one UPPERCASE.')
-      return
-    }
-    else if(!/[a-z]/.test(password)){
-      setLoginError('Your password have at least one LOWERCASE.')
-      return
+    if (password.length < 6) {
+      setLoginError("password should more the 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setLoginError("Your password have at least one UPPERCASE.");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setLoginError("Your password have at least one LOWERCASE.");
+      return;
     }
 
-    setLoginError('')
+    setLoginError("");
 
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
         setSowToast(true);
         navigate(location?.state ? location.state : "/");
-        e.target.reset()
+        e.target.reset();
       })
       .catch((error) => {
         console.error(error);
-        setLoginError(error.message)
+        setLoginError(error.message);
       });
-        
   };
 
-  const handleGoogleSignIn = () =>{
+  const handleGoogleSignIn = () => {
     googleSignIn()
-    .then(result => {
-      console.log(result.user)
-      setUserName(result.user.displayName)
-      setUserProfile(result.user.photoURL)
-      navigate(location?.state ? location.state : "/");
-      setSowToast(true);
-
-    })
-    .catch(error => {console.error(error)})
-  }
+      .then((result) => {
+        console.log(result.user);
+        setUserName(result.user.displayName);
+        setUserProfile(result.user.photoURL);
+        navigate(location?.state ? location.state : "/");
+        setSowToast(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div className="h-screen" style={bg}>
       <Navbar></Navbar>
-      <div className="flex justify-center items-center mt-16 text-white">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="3000"
+        className="flex justify-center items-center mt-16 text-white"
+      >
         <div className="border px-5 md:px-14 py-5  rounded-md">
           <form onSubmit={handleLogin}>
             <h2 className="text-2xl font-bold">Login</h2>
@@ -102,7 +101,10 @@ const Login = () => {
                     type={showPass ? "text" : "password"}
                     name="password"
                   />
-                  <span className="absolute mt-5 ml[-20px]" onClick={() => setShowPass(!showPass)}>
+                  <span
+                    className="absolute mt-5 ml[-20px]"
+                    onClick={() => setShowPass(!showPass)}
+                  >
                     {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                   </span>
                   <label className="after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-black after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:border-black peer-focus:after:scale-x-100 peer-focus:after:border-black peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -125,23 +127,22 @@ const Login = () => {
               </Link>
             </p>
           </form>
-          {
-            loginError && <p className="text-red-500">{loginError}</p>
-          }
+          {loginError && <p className="text-red-500">{loginError}</p>}
         </div>
       </div>
-      <div className="text-center flex justify-center items-center mt-5">
+      <div data-aos="zoom-in-up"
+        data-aos-duration="3000" className="text-center flex justify-center items-center mt-5">
         <div className="space-y-3 ">
-          
-          <button onClick={handleGoogleSignIn} className="py-2 px-9 border rounded-xl flex items-center justify-between text-white text-xl gap-6">
+          <button
+            onClick={handleGoogleSignIn}
+            className="py-2 px-9 border rounded-xl flex items-center justify-between text-white text-xl gap-6"
+          >
             <FaGoogle className="text-2xl text-green-300"></FaGoogle> Continue
             with Google
           </button>
         </div>
       </div>
-      {showToast && (
-        swal("Successfully!", "Logged in!", "success")
-      )}
+      {showToast && swal("Successfully!", "Logged in!", "success")}
     </div>
   );
 };

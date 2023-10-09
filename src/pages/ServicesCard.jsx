@@ -11,7 +11,7 @@ const ServicesCard = ({services}) => {
             
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
                 {
-                    <div class="relative flex w-96  flex-col rounded-3xl bg-[#525150] text-orange-200 bg-clip-border shadow-lg shadow-[#424241]">
+                    <div data-aos="slide-up" data-aos-duration="3000" class="relative flex w-96  flex-col rounded-3xl bg-[#525150] text-orange-200 bg-clip-border shadow-lg shadow-[#424241]">
                     <div class="relative mx-4 -mt-6 h-56 overflow-hidden  bg-blue-gray-500 bg-clip-border text-white  ">
                       <img
                         src={image}

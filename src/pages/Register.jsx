@@ -70,7 +70,8 @@ const Register = () => {
   return (
     <div className="h-screen" style={bg}>
       <Navbar></Navbar>
-      <div className="flex justify-center items-center mt-10 text-white">
+      <div data-aos="zoom-in-up"
+        data-aos-duration="3000" className="flex justify-center items-center mt-10 text-white">
         <div className="border px-12 md:px-32  py-5 rounded-md">
           <form onSubmit={handleRegister}>
             <h2 className="text-2xl font-bold">Register</h2>
@@ -148,7 +149,8 @@ const Register = () => {
           {registerError && <p className="text-red-500">{registerError}</p>}
         </div>
       </div>
-      <div className="text-center flex justify-center items-center mt-3">
+      <div data-aos="zoom-in-up"
+        data-aos-duration="3000" className="text-center flex justify-center items-center mt-3">
         <div className="space-y-3 text-white">
           <button
             onClick={handleGoogleSignUp}

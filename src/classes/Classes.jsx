@@ -17,7 +17,8 @@ const Classes = () => {
       <Navbar></Navbar>
       <div className="grid grid-cols-3 gap-5 max-w-7xl mx-auto mt-10">
         {classes.map((classItem) => (
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div data-aos="zoom-in-up"
+          data-aos-duration="3000" className="card w-96 bg-base-100 shadow-xl">
             <figure>
               <img src={classItem.image_url} alt="Shoes" />
             </figure>

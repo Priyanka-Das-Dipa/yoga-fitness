@@ -24,9 +24,8 @@ const Home = () => {
           {/* Banner Section */}
           <div className="max-w-7xl mx-auto mt-5 text-white">
             <div
-              data-aos="fade-right"
-              data-aos-easing="ease-out-cubic"
-              data-aos-duration="2000"
+              data-aos="zoom-in-up"
+              data-aos-duration="3000"
               className="text-left flex justify-normal items-left pt-16"
             >
               <h2 className="text-6xl lg:text-9xl font-semibold">
