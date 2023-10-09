@@ -58,9 +58,10 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         console.log(result.user);
-        setUserName(result.user.displayName);
-        setUserProfile(result.user.photoURL);
+        // setUserName(result.user.displayName);
+        // setUserProfile(result.user.photoURL);  
         navigate(location?.state ? location.state : "/");
+        console.log(location?.state ? location.state : "/")
         setSowToast(true);
       })
       .catch((error) => {

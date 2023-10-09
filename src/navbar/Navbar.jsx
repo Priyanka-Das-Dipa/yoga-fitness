@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { CiDumbbell } from "react-icons/ci";
-import { Helmet } from "react-helmet-async";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
